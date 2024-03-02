@@ -1,0 +1,16 @@
+.container {
+    width: 200px;
+    height: 200px;
+    background-color: #EEEEEE;
+    border-radius: 15px;
+    border: 5px solid black;
+    margin-left: 5px;
+    margin-right: 5px;
+    position: relative;
+}
+
+.quizName {
+    position:absolute;
+    bottom: 0;
+    left:0
+}
