@@ -5,7 +5,7 @@ export default function QuizButton(props) {
       <div className={styles.container}>
         <Link href={{
           pathname: '/quiz',
-          query: { id: '123' },
+          query: { quizId: '123' },
         }}>
           <h4 className={styles.quizName}>Quiz Name</h4>
         </Link>

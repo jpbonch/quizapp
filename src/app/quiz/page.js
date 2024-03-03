@@ -2,12 +2,13 @@
 
 import styles from "../page.module.css";
 import { useSearchParams } from "next/navigation"
-import { Button } from '@radix-ui/themes';
+import { Button, Grid } from '@radix-ui/themes';
+import Link from "next/link"
 
 export default function Quiz() {
     const searchParams = useSearchParams()
-    const id = searchParams.get('id')
-    console.log("id")
+    const id = searchParams.get('quizId')
+    console.log(id)
     const quizName = "Harry Potter"
 
 
@@ -16,9 +17,19 @@ export default function Quiz() {
             <div className={styles.header}>
                 <h1>{quizName}</h1>
             </div>
-            <Button>
-                Start Game
-            </Button>
+            <Grid columns="1" gap="3">
+                <Link href={{
+                    pathname: '/quiz/play',
+                    query: { quizId: '123' },
+                }}>
+                    <Button>
+                        Play
+                    </Button>
+                </Link>
+                <Button>
+                    Play with a friend
+                </Button>
+            </Grid>
         </main>
     );
 }
