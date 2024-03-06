@@ -5,13 +5,19 @@ import * as Progress from '@radix-ui/react-progress';
 import { socket } from '../../socket';
 import { useEffect, useState } from 'react';
 import './styles.css';
+import { useRouter } from 'next/navigation';
+import styles from "../../page.module.css";
 
 export default function PlayQuiz() {
     const [isConnected, setIsConnected] = useState(socket.connected);
     const [progress, setProgress] = React.useState(13);
     const [matchFound, setMatchFound] = React.useState(false);
+    const router = useRouter()
 
     React.useEffect(() => {
+        if (matchFound) {
+            router.push("/quiz/start")
+        }
         const timer = setTimeout(() => setProgress(66), 500);
         return () => clearTimeout(timer);
     }, []);
@@ -24,12 +30,12 @@ export default function PlayQuiz() {
     const id = searchParams.get('quizId')
 
     return (
-        <main>
-            {matchFound &&
+        <main className={styles.main}>
+            {/* {matchFound &&
                 <div>
                     Match found
                 </div>
-            }
+            } */}
 
             {!matchFound && 
             <div>
