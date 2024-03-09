@@ -5,9 +5,9 @@ export default function QuizButton(props) {
       <div className={styles.container}>
         <Link href={{
           pathname: '/quiz',
-          query: { quizId: '123' },
+          query: { quizId: props.quiz._id },
         }}>
-          <h4 className={styles.quizName}>Quiz Name</h4>
+          <h4 className={styles.quizName}>{props.quiz.category}</h4>
         </Link>
       </div>
     );
