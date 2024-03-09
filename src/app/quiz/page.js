@@ -6,8 +6,7 @@ import { useSearchParams } from "next/navigation"
 import { Button, Grid, Table, Text } from '@radix-ui/themes';
 import Link from "next/link"
 import { useEffect, useState } from "react";
-
-const URL = process.env.NODE_ENV === 'production' ? undefined : 'http://localhost:4000';
+import { SERVER_URL } from "../constants";
 export default function Quiz() {
     const searchParams = useSearchParams()
     const id = searchParams.get('quizId')
@@ -20,7 +19,7 @@ export default function Quiz() {
 
 
   async function getQuizDetails() {
-    let data = await fetch(URL + "/quiz/" + id);
+    let data = await fetch(SERVER_URL + "/quiz/" + id);
     data = await data.json();
     setQuiz(data);
   }

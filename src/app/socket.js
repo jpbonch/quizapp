@@ -1,7 +1,6 @@
 import { io } from 'socket.io-client';
-
+import { SERVER_URL } from "./constants";
 // "undefined" means the URL will be computed from the `window.location` object
 
 
-const URL = process.env.NODE_ENV === 'development' ? 'http://localhost:4000' : "3.19.155.188"; 
-export const socket = io(URL);
+export const socket = io(SERVER_URL);

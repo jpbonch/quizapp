@@ -4,7 +4,7 @@ import SearchBar from "./components/SearchBar";
 import QuizRow from "./components/QuizRow";
 import Link from "next/link"
 import { useEffect, useState } from "react";
-const URL = process.env.NODE_ENV === 'development' ? 'http://localhost:4000' : "3.19.155.188"; 
+import { SERVER_URL } from "./constants";
 export default function Home() {
   const [trendingQuizzes, setTrendingQuizzes] = useState(null);
 
@@ -13,7 +13,7 @@ export default function Home() {
   }, [])
 
   async function getQuizzes() {
-    let data = await fetch(URL + "/quizzes");
+    let data = await fetch(SERVER_URL + "/quizzes");
     data = await data.json();
     console.log(data);
     setTrendingQuizzes(data.slice(0, 5));
