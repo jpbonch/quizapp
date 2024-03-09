@@ -6,8 +6,8 @@ import { useSearchParams } from "next/navigation"
 import { Button, Grid, Table, Text } from '@radix-ui/themes';
 import Link from "next/link"
 import { useEffect, useState } from "react";
-const URL = process.env.NODE_ENV === 'production' ? undefined : 'http://localhost:4000';
 
+const URL = process.env.NODE_ENV === 'production' ? undefined : 'http://localhost:4000';
 export default function Quiz() {
     const searchParams = useSearchParams()
     const id = searchParams.get('quizId')
