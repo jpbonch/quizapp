@@ -1,5 +1,5 @@
 'use client'
-import React from 'react';
+import React, { Suspense } from 'react';
 import { useSearchParams } from "next/navigation"
 import * as Progress from '@radix-ui/react-progress';
 import { socket } from '../../socket';
@@ -32,7 +32,8 @@ export default function PlayQuiz() {
             }
 
             {!matchFound && 
-            <div>
+        <Suspense>    
+        <div>
                 Looking for players...
                 <Progress.Root className="ProgressRoot" value={progress}>
                     <Progress.Indicator
@@ -41,6 +42,7 @@ export default function PlayQuiz() {
                     />
                 </Progress.Root>
             </div>
+            </Suspense>
             }
             
         </main>

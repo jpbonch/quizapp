@@ -17,9 +17,9 @@ export default function StartQuiz() {
         
     }, []);
 
-    const searchParams = useSearchParams();
-    const quizId = searchParams.get('quizId');
-    const gameId = searchParams.get('gameId');
+    //const searchParams = useSearchParams();
+    //const quizId = searchParams.get('quizId');
+    //const gameId = searchParams.get('gameId');
 
     const selectAnswer = (answer) => {
         setDisableButtons(true);
