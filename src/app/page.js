@@ -23,7 +23,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <div className={styles.header}>
-        <h1>Epic Quiz APP</h1>
+        <h1>Epic Quiz App</h1>
         <SearchBar ></SearchBar>
         {/*Profile page icon */}
         <Link href="/profile">
@@ -31,7 +31,7 @@ export default function Home() {
         </Link>
       </div>
       <QuizRow title="Trending Quizzes" quizzes={trendingQuizzes}></QuizRow>
-      <QuizRow title="Suggested for you"></QuizRow>
+      <QuizRow title="Suggested for you" quizzes={trendingQuizzes}></QuizRow>
     </main>
   );
 }
