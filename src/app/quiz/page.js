@@ -9,7 +9,6 @@ import { useEffect, useState } from "react";
 const URL = process.env.NODE_ENV === 'production' ? undefined : 'http://localhost:4000';
 
 export default function Quiz() {
-<<<<<<< HEAD
     const searchParams = useSearchParams()
     const id = searchParams.get('quizId')
     console.log(id)
@@ -25,12 +24,7 @@ export default function Quiz() {
     data = await data.json();
     setQuiz(data);
   }
-=======
-    const searchParams = useSearchParams();
-    const id = searchParams.get('quizId');
     const [rankingData, setRankingData] = React.useState([{rank: "1", user:"Vini", xp: "123"}])
-    console.log(id);
-    const quizName = "";
     const rows = rankingData.map(data => 
             <Table.Row>
                 <Table.RowHeaderCell>{data.rank}</Table.RowHeaderCell>
@@ -51,7 +45,6 @@ export default function Quiz() {
     //     }
     //     return rows;
     // }
->>>>>>> 9a838a19e3f7fdbbd1c102b68d639591fd40a773
 
     return (
         <main className={styles.main}>
@@ -72,10 +65,7 @@ export default function Quiz() {
                 <Button>
                     Play with a friend
                 </Button>
-<<<<<<< HEAD
-            </Grid></>
-            : <p>Loading...</p>}
-=======
+
 
                 <Text> Rankings </Text>
                 <Table.Root>
@@ -92,8 +82,8 @@ export default function Quiz() {
                     </Table.Body>
                 </Table.Root>
 
-            </Grid>
->>>>>>> 9a838a19e3f7fdbbd1c102b68d639591fd40a773
+            </Grid></>
+            : <p>Loading...</p>}
         </main>
     );
 }
